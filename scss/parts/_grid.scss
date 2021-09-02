@@ -71,10 +71,10 @@
             flex-wrap: $flex !important;
         }
     }
-    /* flex wrap */
-    @each $flex in map-get($flex-propertys, flex-wrap){
-        .flex#{$breakp}-#{$flex} {
-            flex-wrap: $flex !important;
+    /* flex shrink */
+    @for $flex-shrink from 0 through 100 {
+        .flex-shrink#{$breakp}-#{$flex-shrink }{
+            flex-shrink: $flex-shrink  !important;
         }
     }
     /* justify-content */
