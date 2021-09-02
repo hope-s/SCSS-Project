@@ -1,0 +1,139 @@
+@import "breakpoint";  
+@import "varible";
+
+@mixin gridSystem($breakp:null) {
+    .d#{$breakp}-grid{
+        display: grid !important;
+        grid-gap: .3215rem !important;
+    }
+
+    @each $grid-auto-flow in $grid-auto-flows {
+        .grid-auto-flow#{$breakp}-#{$grid-auto-flow} {
+            @if  $grid-auto-flow == row-dense {
+                $grid-auto-flow : row dense;
+            }
+            @if $grid-auto-flow == column-dense {
+                $grid-auto-flow : column dense;
+            }
+            
+            grid-auto-flow: $grid-auto-flow !important;
+        }
+    }
+
+    // grid gap
+    @for $gap from 0 through 10 {
+        .grid-gap#{$breakp}-#{$gap}{
+            gap: #{$gap * 0.3125rem} !important;
+        }
+    }
+    // column-gap
+    @for $gap from 0 through 10 {
+        .col-gap#{$breakp}-#{$gap}{
+            column-gap: #{$gap * 0.3125rem} !important;
+        }
+    }
+    // row-gap
+    @for $gap from 0 through 10 {
+        .row-gap#{$breakp}-#{$gap}{
+            row-gap: #{$gap * 0.3125rem} !important;
+        }
+    }
+    // grid column & row
+    @for $grid from 1 through 12{
+        //  grid 
+        .grid#{$breakp}-#{$grid}{
+            grid-template-columns: repeat($grid, 1fr);
+            @extend .d#{$breakp}-grid; 
+        }
+        //grid row
+        .grid-col#{$breakp}-#{$grid}{
+            grid-column: $grid span !important
+        }
+        // grid column
+        .grid-row#{$breakp}-#{$grid}{
+            grid-row: $grid span !important
+        }
+    }
+    .d#{$breakp}-flex{
+        display: flex !important; 
+        flex-wrap: wrap !important;
+        gap: .3125rem !important;
+    }
+    /* flex direction */
+    @each $flex in map-get($flex-propertys, flex-direction){
+        .flex-dir#{$breakp}-#{$flex} {
+            flex-direction: $flex !important;
+        }
+    }
+    /* flex wrap */
+    @each $flex in map-get($flex-propertys, flex-wrap){
+        .flex#{$breakp}-#{$flex} {
+            flex-wrap: $flex !important;
+        }
+    }
+    /* flex wrap */
+    @each $flex in map-get($flex-propertys, flex-wrap){
+        .flex#{$breakp}-#{$flex} {
+            flex-wrap: $flex !important;
+        }
+    }
+    /* justify-content */
+    @each $flex in map-get($flex-propertys, justify-content){
+        .justify#{$breakp}-#{$flex} {
+            justify-content: $flex !important;
+        }
+    }
+    
+    /* align-items */
+    @each $flex in map-get($flex-propertys, align-items){
+        .align-items#{$breakp}-#{$flex} {
+            align-items: $flex !important;
+        }
+    }
+    /* align-content */
+    @each $flex in map-get($flex-propertys, align-content){
+        .align-content#{$breakp}-#{$flex} {
+            align-content: $flex !important;
+        }
+    }
+    /* flex-width */
+    @for $flex-width from 0 through 10{
+        .flex-grow#{$breakp}-#{$flex-width}{
+            flex-grow: $flex-width !important;
+        }
+        .flex-shrink#{$breakp}-#{$flex-width}{
+            flex-shrink: $flex-width !important;
+        }
+        .flex-bassis#{$breakp}-#{$flex-width}{
+            flex-basis: $flex-width * 10 + % !important;
+        }
+    }
+    /* cols */
+    @for $col from 1 through 12{
+        .col#{$breakp}-#{$col}{
+            flex: 1 1 #{$col * 100px} !important;
+        }
+    }       
+}
+/* normal size */
+@include gridSystem();
+// /* small size */
+@include media(sm){
+    @include gridSystem($breakp:-sm);
+}
+/* medium size */
+@include media(md){
+    @include gridSystem($breakp:-md);
+}
+/* larg size */
+@include media(lg){
+    @include gridSystem($breakp:-lg);
+}
+/* Xlarg size */
+@include media(xl){
+    @include gridSystem($breakp:-xl);
+}
+/* XXlarg size */
+@include media(xxl){
+    @include gridSystem($breakp:-xxl);
+}

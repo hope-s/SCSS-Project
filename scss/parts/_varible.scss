@@ -1,0 +1,124 @@
+$colors-grey:(
+    grey-50: #F9FAFB,
+    grey-100: #F3F4F6,
+    grey-200: #E5E7EB,
+    grey-300: #D1D5DB,
+    grey-400: #9CA3AF,
+    grey-500: #6B7280,
+    grey-600: #4B5563,
+    grey-700: #374151,
+    grey-800: #1F2937,
+    grey-900: #111827
+);
+$colors-red:(
+  red-50: #FEF2F2,
+  red-100: #FEE2E2,
+  red-200: #FECACA,
+  red-300: #FCA5A5,
+  red-400: #F87171,
+  red-500: #EF4444,
+  red-600: #DC2626,
+  red-700: #B91C1C,
+  red-800: #991B1B,
+  red-900: #7F1D1D
+);
+$colors-yellow:(
+  yellow-50: #FFFBEB,
+  yellow-100: #FEF3C7,
+  yellow-200: #FDE68A,
+  yellow-300: #FCD34D,
+  yellow-400: #FBBF24,
+  yellow-500: #F59E0B,
+  yellow-600: #D97706,
+  yellow-700: #B45309,
+  yellow-800: #92400E,
+  yellow-900: #78350F
+);
+$colors-green:(
+  green-50: #ECFDF5,
+  green-100: #D1FAE5,
+  green-200: #A7F3D0,
+  green-300:#6EE7B7,
+  green-400: #34D399,
+  green-500: #10B981,
+  green-600: #059669,
+  green-700: #047857,
+  green-800: #065F46,
+  green-900: #064E3B
+);
+$colors-blue:(
+  blue-50: #EFF6FF,
+  blue-100: #DBEAFE,
+  blue-200: #BFDBFE,
+  blue-300: #93C5FD,
+  blue-400: #60A5FA,
+  blue-500: #3B82F6,
+  blue-600: #2563EB,
+  blue-700: #1D4ED8,
+  blue-800: #1E40AF,
+  blue-900: #1E3A8A
+);
+$colors-indigo:(
+  indigo-50: #EEF2FF,
+  indigo-100:#E0E7FF,
+  indigo-200: #C7D2FE,
+  indigo-300: #A5B4FC,
+  indigo-400: #818CF8,
+  
+  indigo-500: #6366F1,
+  indigo-600: #4F46E5,
+  indigo-700: #4338CA,
+  indigo-800: #3730A3,
+  indigo-900: #312E81
+);
+$colors-purple:(
+  purple-50: #F5F3FF,
+  purple-100: #EDE9FE,
+  purple-200: #DDD6FE,
+  purple-300: #C4B5FD,
+  purple-400: #A78BFA,
+  purple-500: #8B5CF6,
+  purple-600: #7C3AED,
+  purple-700: #6D28D9,
+  purple-800: #5B21B6,
+  purple-900: #4C1D95
+);
+$colors-pink:(
+  pink-50: #FDF2F8,
+  pink-100: #FCE7F3,
+  pink-200: #FBCFE8,
+  pink-300: #F9A8D4,
+  pink-400: #F472B6,
+  pink-500: #EC4899,
+  pink-600: #DB2777,
+  pink-700: #BE185D,
+  pink-800: #9D174D,
+  pink-900: #831843
+);
+
+$colors: $colors-pink, $colors-purple, $colors-indigo, $colors-blue, $colors-green, $colors-yellow, $colors-red, $colors-grey;
+
+$S-breakpoint: 566px; 
+$M-breakpoint: 768px;
+$L-breakpoint: 993px;
+$XL-breakpoint: 1200px;
+$XXL-breakpoint: 1400px;
+$text-aligns: center, left, right ,justify;
+$headings-start: 1; 
+$cursors: pointer, cell, auto, copy, move, help, zoom-in, zoom-out; 
+$positions: absolute, relative, sticky, fixed, auto; 
+$displays: inline, block, none, inline-block, inline-flex;
+$floats: left, right , none; 
+$overflows: hidden, auto, visible, scroll; 
+$border-styles: dotted, solid, dashed, transparent, hidden , double, ridge ,outset, inset, none;
+$transition-t-fs: linear, ease, ease-in, ease-out, ease-in-out;
+
+$grid-auto-flows: row, column, row-dense, column-dense;
+
+$flex-propertys: (
+  flex-direction: column column-reverse row row-reverse,
+  flex-wrap: wrap nowrap wrap-reverse,
+  justify-content: center end start space-between space-around space-evenly,
+  align-items: center end start baseline stretch,
+  align-content: center end start baseline stretch space-between space-around space-evenly,
+);

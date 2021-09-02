@@ -1,0 +1,82 @@
+@import "../varible";  
+
+.popup {
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-flex;
+  justify-content: center;
+  &:hover .popup-header{
+    visibility: visible;
+    animation: fade .7s;  
+  }
+  & .popup-header {
+    width: 480px !important;
+    visibility: hidden;
+    background-color: #fff;
+    color: #212529;
+    text-align: center;
+    border-radius: 6px;
+    padding: 0.5rem 6rem;
+    position: absolute;
+    z-index: 1;
+    & span{
+      color: #2c3e50;
+      display: block;
+      padding: 0.3125rem 0rem 0.9375rem;
+      font-weight: 500;
+      font-size: 1rem;    
+    }
+    & p{
+      color: rgba(33, 37, 41, 0.8);
+    }
+    &:after{
+      content: "";
+      position: absolute;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #fff transparent transparent transparent;
+    }
+  }
+}
+
+.pop-left .popup-header {
+  bottom: -84% !important;
+  right: 110% !important;
+  &::after{
+    top: 60% !important;
+    left: calc(100% + 5px) !important;
+    transform: rotate(270deg) !important;
+  }
+}
+
+.pop-right .popup-header {
+  bottom: -100% !important;
+  left: 110% !important;
+  &::after{
+    top: 60% !important;
+    right: 100% !important;
+    transform: rotate(90deg) !important;
+  }
+}
+
+.pop-bottom .popup-header {
+  top: 120% !important;
+  &::after{
+    top: calc(0% - 10px) !important;
+    transform: rotate(180deg) !important;
+  }
+}
+
+.pop-top .popup-header {
+  bottom: 120% !important;
+  &::after{
+    top: calc(100% - 1px) !important;
+    transform: rotate(0deg) !important;
+  }
+}

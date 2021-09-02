@@ -1,0 +1,22 @@
+@import "varible";
+
+@mixin media($breakpoint){
+    @if $breakpoint == xxl {
+        @media only screen and (min-width: $XXL-breakpoint) { @content; }
+    }
+    @else if $breakpoint == xl {
+        @media only screen and (min-width: $XL-breakpoint) { @content; }
+    }
+    @else if $breakpoint == lg {
+        @media only screen and (min-width: $L-breakpoint) { @content; }
+    }
+    @else if $breakpoint == md {
+        @media only screen and (min-width: $M-breakpoint){ @content; }
+    }
+    @else if $breakpoint == sm {
+        @media only screen and (max-width: $S-breakpoint){ @content; }
+    }
+    @else if {
+        @error '`#{$breakpoint} is not dfined !`' ;
+    }
+}

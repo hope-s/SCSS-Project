@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fa-IR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name='themecolor' content='#188743'>
+    <meta name="robots" content="index, follow"/>
+    <!-- style -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- hope css -->
+    <link rel="stylesheet" href="css/hope.css">
+    <!-- sweet alert -->
+    <link rel="stylesheet" href="vendor/sweetAlert/css/sweetalert2.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="vendor/animate/animate.min.css">
+    <!-- chart css -->
+    <link rel="stylesheet" href="vendor/chart.js/css/Chart.min.css">
+    <!-- splide js -->
+    <link rel="stylesheet" href="vendor/splide/css/splide.min.css">
+    <link rel="stylesheet" href="vendor/splide/css/splide-core.min.css">
+    <!-- i hover css -->
+    <link rel="stylesheet" href="vendor/ihover/hover.css">
+    <!-- icons -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" rel="stylesheet"> -->
+    <!-- <script src="vendor/fonticon/js/all.min.js"></script> -->
+    <!-- <link href="vendor/fonticon/all.min.css" rel="stylesheet"> -->
+
+    <!-- tooltip -->
+    <script src="vendor/tooltip.js/popper.min.js"></script>
+    <script src="vendor/tooltip.js/tippy-bundle.umd.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title> تست </title>
+</head>
+<body dir="rtl" class="bg-color-grey-700">   
+
+
+    <div class="container">
+        <nav>
+            <div class="d-flex justify-sm-center justify-md-space-between">
+                <div>
+                    <div class="d-flex">
+                        <img src="img/mike.jpg" alt="img" >
+                        <span> داشبورد من  </span>
+                    </div>
+                </div>
+                <div class="search-box ml ml-sm-0 ">
+                    <button class="btn btn-md gradient-primary fn-weight-5 border-radius-20"> حساب کاربری </button>
+                    <input type="text" class="border-radius-10 py-6 d-sm-flex" placeholder="جستجو کنید">
+                    <i class="fa fa-search"></i>
+                    <i class="fa fa-heart cursor-pointer font-25 text-color-pink-500"></i>
+                </div>                
+            </div>
+        </nav>
+        <main class="d-flex">
+            <aside class="sidebar">
+                <div class="d-sm-none d-block height-1 bg-color-pink-400 border-radius-5 mt-15">
+                    <div class="pt-10">
+                        <img src="img/Method Draw Image.png" class="bg-color-grey-50" alt="zicco">
+                    </div>
+                </div>
+                <div class="menu-list gradient-primary border-radius-5 mt-15 " style="height:350px">
+                    <ul>
+                        <li class="sidebar-close py-15 px"><a class="fa content fa-home home" href="../index.html"> خانه </a></li>
+                        <hr>
+                        <li class="sidebar-close py-15 px-8"><a class="fa content fa-home widget" href="pages/widget.html"> ویجت ها </a></li>
+                        <hr>
+                        <li class="sidebar-close py-15 px-8"><a class="fa content fa-home typography" href="pages/typography.html"> تایپوگرافی </a></li>
+                        <hr>
+                        <li class="sidebar-close py-15 px-8"><a class="fa content fa-home profile" href="pages/profile.html"> پروفایل و فرم ها </a></li>
+                        <hr>
+                        <li class="sidebar-close py-15 px-8"><a class="fa content fa-home timeline" href="pages/timeline.html"> فعالیت ها </a></li>
+                        <hr>
+                        <li id="close" class="menu-item-close py-15 d-inline mr-25"><a class="fa fa-close mr-40"></a></li>
+                    </ul>
+                </div>
+            </aside>
+                
+            <section class="mx-auto mt-15 text-color-grey-50" style="width: 86%; ">
+                <div class="top-chart p-2 bg-color-grey-600 border-radius-4">
+                    <canvas id="canvas" claas="d-block" style="width: 100%; height: 300px;"></canvas>
+                    <div class="mt-2 w-10 p-15 d-flex flex-wrap">
+                        <button class="btn btn-sm gradient-primary col-1 py-9" id="randomizeData"> تازه سازی </button>
+                        <button class="btn btn-sm gradient-success col-1 py-9" id="addDataset"> اضافه کردن لاین </button>
+                        <button class="btn btn-sm gradient-danger col-1 py-9" id="removeDataset"> حذف کردن لاین </button>
+                        <button class="btn btn-sm bg-color-indigo-700 col-1 py-9" id="addData"> افزودن ماه </button>
+                        <button class="btn btn-sm gradient-warning col-1 py-9" id="removeData"> حذف ماه </button>
+                    </div>
+                </div>
+
+                <div class="grid-4 col-gap-2 p-0 mt-15 mb-10">
+
+                    <div class="p-15 grid-0 row-gap-2 bg-color-grey-600 border-radius-4 grid-col-4  grid-col-md-1">
+                        <div class="float-left d-block text-color-grey-50">
+                            <p> شماره </p>
+                            <p> 150,000+ </p>
+                        </div>
+                        <div class="mb-20">
+                            <i class="fa fa-heart font-40 bg-color-pink-500 border-radius-50 p-10 text-color-grey-50"></i>
+                        </div>
+                        <hr class="mb-10">
+                        <div>
+                            <i class="fa fa-angle-up text-color-green-500"></i> <span class="font-14 text-color-green-500"> روند افزایشی </span>
+                            <i class="fa fa-plus-circle cursor-pointer cur-pointer float-left mt-6 text-color-green-500" onclick="showSuccessModal()"></i>
+                        </div>
+                    </div>
+
+                    <div class="mini-item p-2 grid-0 row-gap-2 bg-color-grey-600 border-radius-4 grid-col-4  grid-col-md-1">
+                        <div class="p-15 grid-0 row-gap-2 bg-color-grey-600 border-radius-4">
+                            <div class="float-left d-block text-color-grey-50">
+                                <p> شماره </p>
+                                <p> 150,000+ </p>
+                            </div>
+                            <div class="mb-20">
+                                <i class="fa fa-heart font-40 bg-color-pink-500 border-radius-50 p-10 text-color-grey-50"></i>
+                            </div>
+                            <hr class="mb-10">
+                            <div>
+                                <i class="fa fa-angle-up text-color-green-500"></i> <span class="font-14 text-color-green-500"> روند افزایشی </span>
+                                <div class="popup pop-top float-left">
+                                    <i class="fa fa-info-circle mt-6 text-color-green-500"></i>
+                                    <div class="popup-header width-10 mb-1">
+                                        <span> پاپ آپ </span>
+                                        <p class="mt-10 width-10">
+                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک اس
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-15 grid-0 row-gap-2 bg-color-grey-600 border-radius-4 grid-col-4  grid-col-md-1">
+                        <div class="float-left d-block text-color-grey-50">
+                            <p> شماره </p>
+                            <p> 150,000+ </p>
+                        </div>
+                        <div class="mb-20">
+                            <i class="fa fa-heart font-40 bg-color-pink-500 border-radius-50 p-10 text-color-grey-50"></i>
+                        </div>
+                        <hr class="mb-10">
+                        <div>
+                            <i class="fa fa-angle-up text-color-green-500"></i> <span class="font-14 text-color-green-500"> روند افزایشی </span>
+                            <i class="fa fa-dot-circle-o btn-drop-down float-left cursor-pointer mt-6 text-color-green-500" aria-hidden="true" ></i>
+                            <div class="drop-down-child after-none text-color-grey-900" id="btn-drop-down-child">
+                                <li style="list-style: none;" class="py-10">
+                                    <a href="#" class="p-5"> افزایش </a>
+                                </li>
+                                <li style="list-style: none;" class="py-10">
+                                    <a href="#" class="p-5"> کاهش </a>
+                                </li>
+                                <li style="list-style: none;" class="py-10">
+                                    <a href="#" class="p-5"> ثبت </a>
+                                </li>
+                            </div>      
+                        </div>
+                    </div>
+
+                    <div class="p-15 grid-0 row-gap-2 bg-color-grey-600 border-radius-4 grid-col-4  grid-col-md-1">
+                        <div class="float-left d-block text-color-grey-50">
+                            <p> شماره </p>
+                            <p> 150,000+ </p>
+                        </div>
+                        <div class="mb-20">
+                            <i class="fa fa-heart font-40 bg-color-pink-500 border-radius-50 p-10 text-color-grey-50"></i>
+                        </div>
+                        <hr class="mb-10">
+                        <div>
+                            <i class="fa fa-angle-up text-color-green-500"></i> <span class="font-14 text-color-green-500"> روند افزایشی </span>
+                            <i class="fa fa-plus-circle float-left cursor-pointer mt-6 text-color-green-500" onclick="showCountryModal()"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-3 p-0 pt-1 ">
+                    <div class="chart-item p-2 bg-color-grey-600 text-color-grey-50 grid-2 border-radius-4 mx-3 p-20 width-sm-12 grid-col-sm-12">
+                        <div>
+                            <button class="btn btn-sm gradient-primary" onclick="showQuestionModal()"> نمایش </button>
+                        </div>
+                        <div class="title text-left">
+                            <span class="d-block">
+                                مجموع اعلان ها
+                            </span>
+                            <h3 class="white d-inline-block mb-0"> +۷۶۳،۲۱۵ </h3>&nbsp;
+                            <i class="fa fa-bell-o text-color-pink-500 fn-size-5"></i>
+                        </div>
+                        <canvas id="canvas5" class="w-10 grid-col-2" style="display: block; width: 100%; height: 300px;"></canvas>
+                    </div>
+        
+                    <div class="chart-item p-2 bg-color-grey-600 border-radius-4 text-color-grey-50 mx-3 p-20 width-sm-12 grid-col-sm-12">
+                        <div class="title text-left">
+                            <span class="d-block">
+                                فروش روزانه
+                            </span>
+                            <h3 class="white d-inline-block mb-0"> +۱،۴۱۴ </h3>&nbsp;
+                            <i class="fa fa-sellsy text-color-green-500 fn-size-5"></i>
+                        </div>
+                        <canvas id="canvas3" class="w-10" style="display: block; width: 100%; height: 300px;"></canvas>
+                    </div>
+        
+                    <div class="chart-item p-2 b-sm grid-2 bg-color-grey-600 text-color-grey-50 border-radius-4 mr-3 p-20 width-sm-12 grid-col-sm-12">
+                        <div class="d-flex">
+                            <div class="d-flex gap-1 white">
+                                <li id="randomizeDataChart" class="btn-sound gradient-primary chart-pie-change-value px-14  border-radius-50">
+                                    <i class="fa fa-random text-center mt-12"></i>
+                                </li>
+                                <li id="addDatasetChart" class="btn-sound gradient-success chart-pie-change-value px-14  border-radius-50">
+                                    <i class="fa fa-plus text-center mt-12"></i>
+                                </li>
+                                <li id="removeDatasetChart" class="btn-sound gradient-danger chart-pie-change-value px-14  border-radius-50">
+                                    <i class="fa fa-remove text-center mt-12"></i>
+                                </li>
+                            </div>
+                        </div>
+                        <div class="title text-left">
+                            <span class="d-block">
+                                بیشترین خرید
+                            </span>
+                            <h3 class="white d-inline-block mb-0"> +۲،۸۰۴ </h3>&nbsp;
+                            <i class="fa fa-map-o text-color-pink-400 fn-size-5"></i>
+                        </div>
+                        <canvas id="canvas4" class="w-10 grid-col-2" style="display: block; width: 100%; height: 300px;"></canvas>
+                    </div>
+                </div>
+                
+            </section>
+        </main>
+
+        <footer class="my-13">
+            <span class="text-color-grey-50 my-20 m"> © کپی رایت </span>
+            <div class="footer-links float-left ml-35">
+                <a href="#" class="text-color-grey-50 my-10 d-inline mx-4"> در باره ما </a>
+                <a href="#" class="text-color-grey-50 my-10 d-inline mx-4"> وبسایت </a>
+                <a href="#" class="text-color-grey-50 my-10 d-inline mx-4"> وبلاگ </a>
+            </div>    
+        </footer>
+    </div>  
+
+    
+    <!-- chart js -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/chart.js/myCharts.js"></script>
+    <!-- sweet alert -->
+    <script src="vendor/sweetAlert/sweetalert2.js"></script>
+    <!-- wow js -->
+    <script src="vendor/wow/wow.js"></script>
+    <script>
+    new WOW().init();
+    </script>
+    <!-- splide js  -->
+    <script src="vendor/splide/js/splide.min.js"></script>
+    <!-- -->
+    <script src="js/script.js"></script>
+    <script src="js/zcss.js"></script>
+</body>
+</html>

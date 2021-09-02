@@ -1,0 +1,103 @@
+@import "../varible";  
+
+.table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  color: #bfbfbd;
+  text-align: right;
+  &:tr{
+    display: block;
+    padding: .6rem 0.4rem;
+  }
+  & th, th{
+    padding: 0.3125rem;
+    min-width: 400px;
+  }
+  & thead{
+    color: #FDFDFD;
+    display: block;
+    font-weight: 600;
+    & tr{
+      display: block;
+      position: relative;
+    }
+  }
+  & tbody{
+    display: block;
+    overflow: auto;
+    width: 100%;
+    & tr{
+      border-top: solid 0.01rem rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+.table-dark {
+  tbody tr:nth-child(even) {
+    background-color: #ffffff;
+    color: #344675;
+    font-weight: 500;
+  }
+}
+
+.table-primary {
+  tbody tr:nth-child(even) {
+    background: #e66ad2;
+    color: #ffffff;
+    font-weight: 500;
+  }
+  tbody tr {
+    border: none !important;
+  }
+}
+
+.table-info {
+  tbody tr:nth-child(even) {
+    background: #419ef9;
+    color: #ffffff;
+    font-weight: 500;
+  }
+  tbody tr {
+    border: none !important;
+  }
+}
+
+.table-success {
+  tbody tr:nth-child(even) {
+    background: #00bf9a;
+    color: #ffffff;
+    font-weight: 500;
+  }
+  tbody tr {
+    border: none !important;
+  }
+}
+
+.table-warning {
+  tbody tr:nth-child(even) {
+    background: #ff9f89;
+    color: #ffffff;
+    font-weight: 500;
+  }
+  tbody tr {
+    border: none !important;
+  }
+}
+
+.table-danger {
+  tbody tr:nth-child(even) {
+    background: #fd77a4;
+    color: #ffffff;
+    font-weight: 500;
+  }
+  tbody tr {
+    border: none !important;
+  }
+}
+
+@for $i from 1 through 10 {
+  .table-mw#{-$i} th,
+  .table-mw#{-$i} td {
+    min-width: #{$i * 100}px !important;
+  }
+}

@@ -1,0 +1,28 @@
+@import "../varible";  
+
+
+.tab {
+  overflow: hidden;
+  // tyle the buttons inside the tab
+  .tab-button {
+    transition: 0.3s;
+    font-size: 1rem;
+    &:hover {
+      background-color: #ddd;
+    }
+  }
+}
+
+.tab-direction {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-content {
+  display: none;
+  padding: 0.375rem 0.75rem;
+}
+
+.active-tab {
+  display: block;
+}

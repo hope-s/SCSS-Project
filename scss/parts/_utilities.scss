@@ -1,0 +1,131 @@
+@import "breakpoint";
+@import "varible";
+
+@mixin marginBreakpoints($breakpointM : null){
+    @for $margin from 1 through 100 {
+        .m#{$breakpointM}-#{$margin} {
+            margin: $margin + px !important;
+        }
+        // margin top noraml 
+        .mt#{$breakpointM}-#{$margin} {
+            margin-top: $margin + px !important;
+        }
+        // margin right noraml 
+        .mr#{$breakpointM}-#{$margin} {
+            margin-right: $margin + px !important;
+        }
+        // margin buttom noraml 
+        .mb#{$breakpointM}-#{$margin} {
+            margin-bottom: $margin + px !important;
+        }
+        // maegin left normal
+        .ml#{$breakpointM}-#{$margin} {
+            margin-left: $margin + px !important;
+        }
+        /* margin x */
+        .mx#{$breakpointM}-#{$margin} {
+            margin-left: $margin + px !important;
+            margin-right: $margin + px !important;
+        }
+        .my#{$breakpointM}-#{$margin} {
+            margin-top: $margin + px !important;
+            margin-bottom: $margin + px !important;
+        }
+
+    }
+    /* margin right auto */
+    .mr#{$breakpointM}-auto {
+        margin-right: auto !important;
+    }
+    /* margin left auto */
+    .ml#{$breakpointM}-auto {
+        margin-left: auto !important;
+    }
+    /* margin x auto */
+    .mx#{$breakpointM}-auto {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    /* margin y auto */
+    .my#{$breakpointM}-auto {
+        margin-top: auto !important;
+        margin-bottom: auto !important;
+    }
+
+}
+/* normall size */
+@include marginBreakpoints();
+/* small size */
+@include media(sm){
+    @include marginBreakpoints($breakpointM:-sm);
+}
+/* medium size */
+@include media(md){
+    @include marginBreakpoints($breakpointM:-md);
+}
+/* larg size */
+@include media(lg){
+    @include marginBreakpoints($breakpointM:-lg);
+}
+/* Xlarg size */
+@include media(xl){
+    @include marginBreakpoints($breakpointM:-xl);
+}
+/* XXlarg size */
+@include media(xxl){
+    @include marginBreakpoints($breakpointM:-xxl);
+}
+
+@mixin paddingBreakpoints($breakpointP : null){
+    @for $padding from 1 through 100 {
+        .p#{$breakpointP}-#{$padding} {
+            padding: $padding + px;
+        }
+        // padding top noraml 
+        .pt#{$breakpointP}-#{$padding} {
+            padding-top: $padding + px;
+        }
+        // padding right noraml 
+        .pr#{$breakpointP}-#{$padding} {
+            padding-right: $padding + px;
+        }
+        // padding buttom noraml 
+        .pb#{$breakpointP}-#{$padding} {
+            padding-bottom: $padding + px;
+        }
+        // padding left normal
+        .pl#{$breakpointP}-#{$padding} {
+            padding-left: $padding + px;
+        }
+        .px#{$breakpointP}-#{$padding} {
+            padding-left: $padding + px !important;
+            padding-right: $padding + px !important;
+        }
+        .py#{$breakpointP}-#{$padding} {
+            padding-top: $padding + px !important;
+            padding-bottom: $padding + px !important;
+        }
+    }
+}
+/* normall size */
+@include paddingBreakpoints();
+/* small size */
+@include media(sm){
+    @include paddingBreakpoints($breakpointP:-sm);
+}
+/* medium size */
+@include media(md){
+    @include paddingBreakpoints($breakpointP:-md);
+}
+/* larg size */
+@include media(lg){
+    @include paddingBreakpoints($breakpointP:-lg);
+}
+/* Xlarg size */
+@include media(xl){
+    @include paddingBreakpoints($breakpointP:-xl);
+}
+/* XXlarg size */
+@include media(xxl){
+    @include paddingBreakpoints($breakpointP:-xxl);
+} 

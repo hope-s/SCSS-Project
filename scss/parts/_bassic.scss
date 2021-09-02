@@ -1,0 +1,263 @@
+@import "varible";
+@import "breakpoint";
+@import "utilities";
+@import "reboot";
+
+@mixin bassic($bassic:null) {
+
+    /* text position */
+    @each $text in $text-aligns {
+        .text#{$bassic}-#{$text} {
+            text-align: $text !important
+        }
+    }
+
+    /* line height */
+    @for $lineH from 0 through 30 {
+        .line-h#{$bassic}-#{$lineH} {
+            line-height: $lineH + px !important
+        }
+    }
+    // z-index
+    @for $Zindex from 1 through 1000 {
+        .z-index#{$bassic}-#{$Zindex} {
+            z-index: $Zindex !important
+        }
+    }
+
+    /* heading */
+    @for $headings-start from 1 through 6 {
+        .heading#{$bassic}-#{$headings-start} {
+            font-size: $headings-start + $headings-start + 12
+        }
+    }
+
+    /* cursors */
+    @each $cursor in $cursors {
+        .cursor#{$bassic}-#{$cursor} {
+            cursor: $cursor !important
+        }
+    }
+
+    /* position */
+    @each $position in $positions {
+        .position#{$bassic}-#{$position} {
+            position: $position !important
+        }
+    }
+
+    // top
+    @for $top from 1 through 50 {
+        .top#{$bassic}-#{$top} {
+            top: $top + rem !important
+        }
+    }
+
+    // right
+        @for $right from 1 through 50 {
+        .right#{$bassic}-#{$right} {
+            right: $right + rem !important
+        }
+    }
+
+    // bottom
+    @for $bottom from 1 through 50 {
+        .bottom#{$bassic}-#{$bottom} {
+            bottom: $bottom + rem !important
+        }
+    }
+    
+    // left
+    @for $left from 1 through 50 {
+        .left#{$bassic}-#{$left} {
+            bottom: $left + rem !important
+        }
+    }
+
+    /* font size */
+    @for $font from 1 through 100 {
+        .font#{$bassic}-#{$font} {
+            font-size: $font + px !important
+        }
+    }
+
+    /* display */
+    @each $display in $displays {
+        .d#{$bassic}-#{$display} {
+            display: $display !important;
+        }
+    }
+
+    /* width */
+    @for $width from 0 through 10 {
+        .width#{$bassic}-#{$width} {
+            width: $width * 10 + % !important
+        }
+    }
+
+    /* height */
+    @for $height from 0 through 10 {
+        .height#{$bassic}-#{$height} {
+            height: $height * 10 + % !important
+        }
+    }
+
+    /* float */
+    @each $float in $floats {
+        .float#{$bassic}-#{$float} {
+            float: $float !important;
+        }
+    }
+
+    /* overflow */
+    @each $overflow in $overflows {
+        .overflow#{$bassic}-#{$overflow} {
+            overflow: $overflow !important;
+        }
+    }
+    
+
+    /* border */
+    @for $border from 0 through 10 {
+        .border-width#{$bassic}-#{$border} {
+            border-width: $border + px !important
+        }
+    }
+
+    /* border style */
+    @each $border-style in $border-styles {
+        .border-style#{$bassic}-#{$border-style} {
+            border-style: $border-style
+        }
+    }
+ 
+    /* border color  */
+    @each $colors-to in $colors {
+
+        @each $c-color,
+        $value-colors in $colors-to {
+            .border-color#{$bassic}-#{$c-color} {
+                border-color: $value-colors !important
+            }
+
+            .bg-color#{$bassic}-#{$c-color} {
+                background-color: $value-colors !important
+            }
+            
+            .text-color#{$bassic}-#{$c-color} {
+                color: $value-colors !important
+            }
+        }
+    }
+
+    /* border radius */
+    @for $radius from 0 through 50 {
+        .border-radius#{$bassic}-#{$radius} {
+            border-radius: $radius +px !important;
+        }
+    }
+
+    /* trasition delay */
+    @for $trasition-d from 1 through 5 {
+        .trasition-d#{$bassic}-#{$trasition-d} {
+            transition-delay: $trasition-d;
+        }
+
+        @each $trasition-i in $trasition-d {
+            @for $trasition-i from 1 through 9 {
+                .trasition-d#{$bassic}-#{$trasition-d}#{$trasition-i} {
+                    transition-delay: $trasition-d#{"."+$trasition-i}
+                }
+            }
+        }
+    }
+
+    /* transition timing function */
+    @each $transition-t-f in $transition-t-fs {
+        .transition-t-f#{$bassic}-#{$transition-t-f} {
+            transition-timing-function: $transition-t-f !important
+        }
+    }
+
+    // opacity
+    .opacity#{$bassic}-#{0} {
+        opacity: 0 !important;
+    }
+
+    @for $opacity from 1 through 9 {
+        .opacity#{$bassic}-#{0}#{$opacity} {
+            opacity: #{"."+$opacity} !important;
+        }
+    }
+
+    .opacity#{$bassic}-#{1} {
+        opacity: 1 !important;
+    }
+}
+
+/* container resposive */
+.container {
+    width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+@include media(sm) {
+    .container {
+        max-width: 640px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+@include media(md) {
+    .container {
+        max-width: 768px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+@include media(lg) {
+    .container {
+        max-width: 1024px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+@include media(xl) {
+    .container {
+        max-width: 1200px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+/* normal size */
+@include bassic();
+
+/* small size */
+@include media(xxl) {
+    @include bassic(-xxl)
+}
+
+/* medium size */
+@include media(xl) {
+    @include bassic(-xl)
+}
+
+/* larg size */
+@include media(lg) {
+    @include bassic(-lg)
+}
+
+/* XLarg size */
+@include media(md) {
+    @include bassic(-md)
+}
+
+/* 2XL size */
+@include media(sm) {
+    @include bassic(-sm)
+}
