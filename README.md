@@ -1,1 +1,2 @@
-# SCSS-Project-Panel-Admin
+# SCSS-Project
+Panel-Admin
