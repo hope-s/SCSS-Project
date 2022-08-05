@@ -1,2 +1,1 @@
-# SCSS-Project
- see the SCSS framework: https://github.com/hope-s/SCSS-Project/tree/master/scss
+### see the SCSS framework: https://github.com/hope-s/SCSS-Project/tree/master/scss
